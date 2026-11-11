@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "7c1e4b52-3a9d-4f6e-9b0a-5d2f8e6a1c34",
+		"name": "Mi API Bruno",
+		"description": "Colección de ejemplo para el taller de Bruno. Usa una API de prueba (MockAPI) con usuarios.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener Usuarios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code es 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://68eadfd576b3362414cc5b49.mockapi.io/api/lia/usuarios",
+					"protocol": "https",
+					"host": [
+						"68eadfd576b3362414cc5b49",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"api",
+						"lia",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code es 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Nombre\",\n    \"apellido\": \"Apellido\",\n    \"telefono\": \"2645645678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://68eadfd576b3362414cc5b49.mockapi.io/api/lia/usuarios",
+					"protocol": "https",
+					"host": [
+						"68eadfd576b3362414cc5b49",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"api",
+						"lia",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
